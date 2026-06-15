@@ -1,7 +1,4 @@
-import { useState } from "react";
-
-export default function Pagenation() {
-  const [PageNo, SetPageNo] = useState(1);
+export default function Pagenation({PageNo,SetPageNo}) {
 
   const handleprev = () => {
     if (PageNo > 1) {
