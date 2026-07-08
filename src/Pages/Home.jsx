@@ -5,8 +5,6 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
-console.log("API KEY:", API_KEY);
-console.log("API KEY EXISTS:", !!API_KEY);
 
 export default function Home({ PageNo, SetPageNo }) {
   const [MovieList, setMovieList] = useState([]);
@@ -19,10 +17,6 @@ export default function Home({ PageNo, SetPageNo }) {
       );
 
       const updatedList = resp.data.results;
-
-      console.log("Updated List:", updatedList);
-      console.log("Length:", updatedList.length);
-
       setMovieList(updatedList);
 
       if (!bannerMovie && updatedList.length > 0) {
@@ -38,9 +32,9 @@ export default function Home({ PageNo, SetPageNo }) {
 
   return (
     <div>
-      <h2 className="font-bold text-center">
-  Movie Count: {MovieList.length}
-</h2>
+      {MovieList && MovieList.length === 0 && (
+        <h2 className="font-bold text-center">Loading Movies...</h2>
+      )}
       {MovieList.length > 0 && (
         <div>
           <Banner url={bannerMovie?.backdrop_path} title={bannerMovie?.title} />
