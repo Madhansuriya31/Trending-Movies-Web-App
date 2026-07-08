@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
+console.log("API KEY:", API_KEY);
+console.log("API KEY EXISTS:", !!API_KEY);
 
 export default function Home({ PageNo, SetPageNo }) {
   const [MovieList, setMovieList] = useState([]);
