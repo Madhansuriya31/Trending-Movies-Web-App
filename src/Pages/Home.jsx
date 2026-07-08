@@ -4,8 +4,9 @@ import Pagenation from "../Components/Pagenation";
 import { useEffect, useState } from "react";
 import axios from "./../../node_modules/axios/lib/axios";
 
-export default function Home({PageNo, SetPageNo}) {
+export default function Home({ PageNo, SetPageNo }) {
   const [MovieList, setMovieList] = useState([]);
+  const [bannerMovie, setBannerMovie] = useState(null);
 
   useEffect(() => {
     const fetchdata = async () => {
@@ -14,6 +15,9 @@ export default function Home({PageNo, SetPageNo}) {
       );
       const updatedList = resp.data.results;
       setMovieList(updatedList);
+      if (!bannerMovie) {
+        setBannerMovie(updatedList[0]);
+      }
     };
     fetchdata();
   }, [PageNo]);
@@ -25,9 +29,9 @@ export default function Home({PageNo, SetPageNo}) {
       )}
       {MovieList.length > 0 && (
         <div>
-          <Banner url={MovieList[0].backdrop_path} title={MovieList[0].title}/>
+          <Banner url={bannerMovie?.backdrop_path} title={bannerMovie?.title} />
           <Movies MovieList={MovieList} />
-          <Pagenation PageNo={PageNo} SetPageNo={SetPageNo}/>
+          <Pagenation PageNo={PageNo} SetPageNo={SetPageNo} />
         </div>
       )}
     </div>
