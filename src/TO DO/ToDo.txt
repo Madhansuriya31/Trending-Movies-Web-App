@@ -1,0 +1,6 @@
+// TO DO
+
+1. Need to stop updating the banner image when page changes 
+
+2. Keep the same page visited after returning from watchlist ,
+   Movies page must not start from the first page again

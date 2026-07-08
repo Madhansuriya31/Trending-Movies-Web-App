@@ -2,7 +2,7 @@ import { useState } from "react";
 import { urltoposterPath } from "../utility/movieutility";
 import Movies from './Movies';
 
-export default function MovieCard({Movie, isfav, handleAddToWatchList}) {
+export default function MovieCard({Movie, isfav, handleAddToWatchList, handleRemoveToWatchList}) {
   
   const {poster_path,title} = Movie;
   const posterpath = urltoposterPath(Movie.poster_path);
@@ -16,7 +16,7 @@ export default function MovieCard({Movie, isfav, handleAddToWatchList}) {
         </div>}
         {isfav && <div
           className="absolute text-2xl right-0 m-4 flex justify-center h-8 w-8 items-center rounded-lg bg-gray-900/60"
-          //onClick={()=>handleAddToWatchList(movie)}
+          onClick={()=>handleRemoveToWatchList(Movie.id)}
         >
           ❌
         </div>}
