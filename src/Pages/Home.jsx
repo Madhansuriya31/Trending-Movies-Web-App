@@ -20,6 +20,9 @@ export default function Home({ PageNo, SetPageNo }) {
 
       const updatedList = resp.data.results;
 
+      console.log("Updated List:", updatedList);
+      console.log("Length:", updatedList.length);
+
       setMovieList(updatedList);
 
       if (!bannerMovie && updatedList.length > 0) {
