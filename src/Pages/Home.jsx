@@ -38,9 +38,9 @@ export default function Home({ PageNo, SetPageNo }) {
 
   return (
     <div>
-      {MovieList && MovieList.length === 0 && (
-        <h2 className="font-bold text-center">Loading Movies...</h2>
-      )}
+      <h2 className="font-bold text-center">
+  Movie Count: {MovieList.length}
+</h2>
       {MovieList.length > 0 && (
         <div>
           <Banner url={bannerMovie?.backdrop_path} title={bannerMovie?.title} />
