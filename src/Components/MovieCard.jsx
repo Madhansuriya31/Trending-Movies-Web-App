@@ -21,7 +21,7 @@ export default function MovieCard({Movie, isfav, handleAddToWatchList, handleRem
           ❌
         </div>}
       <img className="h-full w-full rounded-2xl" src={posterpath} alt="Poster-Image" />
-      <p className="absolute bottom-3 w-full text-white text-center text-xl">
+      <p className="absolute bottom-0 w-full bg-black/80 text-white text-center text-xl py-2">
         {title}
       </p>
     </div>
