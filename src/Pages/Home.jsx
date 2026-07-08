@@ -2,25 +2,34 @@ import Banner from "../Components/Banner";
 import Movies from "../Components/Movies";
 import Pagenation from "../Components/Pagenation";
 import { useEffect, useState } from "react";
-import axios from "./../../node_modules/axios/lib/axios";
+import axios from "axios";
+
+const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
 
 export default function Home({ PageNo, SetPageNo }) {
   const [MovieList, setMovieList] = useState([]);
   const [bannerMovie, setBannerMovie] = useState(null);
-
   useEffect(() => {
-    const fetchdata = async () => {
+  const fetchdata = async () => {
+    try {
       const resp = await axios.get(
-        `https://api.themoviedb.org/3/trending/movie/day?api_key=3aec63790d50f3b9fc2efb4c15a8cf99&language=en-US&page=${PageNo}`,
+       `https://api.themoviedb.org/3/trending/movie/day?api_key=${API_KEY}&language=en-US&page=${PageNo}`
       );
+
       const updatedList = resp.data.results;
+
       setMovieList(updatedList);
-      if (!bannerMovie) {
+
+      if (!bannerMovie && updatedList.length > 0) {
         setBannerMovie(updatedList[0]);
       }
-    };
-    fetchdata();
-  }, [PageNo]);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  fetchdata();
+}, [PageNo]);
 
   return (
     <div>
