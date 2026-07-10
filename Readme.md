@@ -1,7 +1,7 @@
 # 🎬 Trending Movies Web Application
 
-A responsive movie discovery web application built with **React.js**, **Vite**, and the **TMDB API**. 
-The application allows users to browse trending movies and manage a personalized watchlist with a clean, responsive interface.
+A modern and responsive movie discovery application built with **React.js**, **Vite**, and **The Movie Database (TMDB) API**. 
+Users can browse trending movies, manage a personalized watchlist, and organize movies by searching, filtering, and sorting within the watchlist.
 
 ## 🚀 Live Demo
 
@@ -55,13 +55,13 @@ src/
 Clone the repository:
 
 ```bash
-git clone https://github.com/Madhansuriya31/<repository-name>.git
+git clone https://github.com/Madhansuriya31/Trending-Movies-Web-App.git
 ```
 
 Navigate to the project folder:
 
 ```bash
-cd <repository-name>
+cd Trending-Movies-Web-App
 ```
 
 Install dependencies:
@@ -108,7 +108,6 @@ This project uses **The Movie Database (TMDB) API** to fetch trending movie data
 **Madhan Suriya**
 
 * GitHub: https://github.com/Madhansuriya31
-* LinkedIn: *(Add your LinkedIn profile)*
 
 ## 📄 License
 
