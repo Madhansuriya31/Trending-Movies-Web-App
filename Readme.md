@@ -30,14 +30,6 @@ Users can browse trending movies, manage a personalized watchlist, and organize 
 * TMDB API
 * Local Storage
 
-## 📷 Screenshots
-
-> Add screenshots of the following pages:
-
-* Home Page
-* 
-* Watchlist Page
-* Mobile View
 
 ## 📁 Project Structure
 
